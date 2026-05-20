@@ -61,6 +61,12 @@ export default function Home() {
           >
             Reinvented Gifting
           </div>
+          <p
+            className={`max-w-xs md:max-w-sm text-center text-white/75 text-sm md:text-base leading-6 mb-4 transition-all duration-[1200ms] ease-out ${showContent ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+            style={{ transitionDelay: showContent ? "135ms" : "0ms" }}
+          >
+            A social gifting app where friends come together to contribute toward wishes that actually matter.
+          </p>
 
           <div className="flex flex-col gap-3 justify-center pt-0">
             <a
