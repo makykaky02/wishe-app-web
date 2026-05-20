@@ -71,6 +71,13 @@ export default function TermsOfServicePage() {
         </p>
 
         <h2 className="text-2xl font-medium tracking-tight text-[#6b9cff] mt-12 mb-4">
+          Account deletion and remaining balances
+        </h2>
+        <p className="text-gray-600 leading-8 mb-8 rounded-3xl border border-[#ffe0b8] bg-[#fff8ef] p-6">
+          Users are responsible for withdrawing available funds before deleting their account. Deleting an account may affect access to any remaining balance associated with the account.
+        </p>
+
+        <h2 className="text-2xl font-medium tracking-tight text-[#6b9cff] mt-12 mb-4">
           User content
         </h2>
         <p className="text-gray-600 leading-8 mb-8 rounded-3xl border border-[#dbe6ff] bg-[#fbfcff] p-6">
