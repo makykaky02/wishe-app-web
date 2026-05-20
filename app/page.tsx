@@ -35,7 +35,7 @@ export default function Home() {
         </video>
 
         <div
-          className={`absolute top-16 md:top-[72%] left-1/2 z-10 -translate-x-1/2 text-[#ffb25c] text-base md:text-lg font-normal tracking-[0.16em] uppercase drop-shadow-[0_4px_18px_rgba(0,0,0,0.65)] transition-all duration-700 ease-out ${showContent ? "opacity-0 -translate-y-3" : "opacity-100 translate-y-0"}`}
+          className={`absolute top-[72%] md:top-[72%] left-1/2 z-10 -translate-x-1/2 text-[#ffb25c] text-base md:text-lg font-normal tracking-[0.16em] uppercase drop-shadow-[0_4px_18px_rgba(0,0,0,0.65)] transition-all duration-700 ease-out ${showContent ? "opacity-0 -translate-y-3" : "opacity-100 translate-y-0"}`}
         >
           Reinvented Gifting
         </div>
