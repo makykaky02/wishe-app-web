@@ -43,8 +43,8 @@ export const metadata: Metadata = {
       "A social gifting app where friends come together to contribute toward wishes that actually matter.",
   },
   icons: {
-    icon: "/favicon.png",
-    shortcut: "/favicon.png",
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
     apple: "/favicon.png",
   },
 };
