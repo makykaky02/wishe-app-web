@@ -13,11 +13,14 @@ export default function ContactPage() {
         </h1>
 
         <p className="text-gray-600 leading-loose mb-6">
-          You can reach us through Instagram.
+          You can reach us through Instagram or email.
         </p>
 
         <p className="text-gray-600 text-lg mb-12">
           @wishe.app
+        </p>
+        <p className="text-gray-600 text-lg mb-12">
+          support@wishe.app
         </p>
 
         <div className="flex flex-col gap-4 max-w-sm">
