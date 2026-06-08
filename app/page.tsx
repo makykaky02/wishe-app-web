@@ -23,7 +23,7 @@ export default function Home() {
       </nav>
 
       {/* HERO */}
-      <section className="relative h-screen w-full flex items-center justify-center text-center overflow-hidden">
+      <section className="relative min-h-screen w-full flex items-center justify-center text-center overflow-hidden py-8 md:h-screen md:py-0">
 
         {/* Background Video */}
         <video
@@ -49,7 +49,7 @@ export default function Home() {
         <div className={`absolute inset-0 bg-[#6b9cff] transition-opacity duration-[1600ms] ease-out ${showContent ? "opacity-100" : "opacity-0"}`} />
 
         {/* Content */}
-        <div className={`relative z-10 -translate-y-12 md:-translate-y-16 flex flex-col items-center space-y-0 px-6 transition-all duration-[1200ms] ease-out ${showContent ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-8 scale-95"}`}>
+        <div className={`relative z-10 flex flex-col items-center space-y-0 px-6 pb-20 md:pb-0 transition-all duration-[1200ms] ease-out ${showContent ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-8 scale-95"}`}>
           
           {/* Logo */}
           <Image
@@ -58,19 +58,19 @@ export default function Home() {
             width={224}
             height={224}
             priority
-            className={`w-56 h-56 md:w-72 md:h-72 object-contain -mb-10 md:-mb-12 -mt-8 md:-mt-10 transition-all duration-[1400ms] ease-out ${showContent ? "opacity-100 translate-y-0 rotate-0" : "opacity-0 -translate-y-6 -rotate-3"}`}
+            className={`w-48 h-48 md:w-72 md:h-72 object-contain -mb-8 md:-mb-12 -mt-4 md:-mt-10 transition-all duration-[1400ms] ease-out ${showContent ? "opacity-100 translate-y-0 rotate-0" : "opacity-0 -translate-y-6 -rotate-3"}`}
           />
           <div
-            className={`w-auto whitespace-nowrap text-center text-white/90 text-[10px] md:text-sm tracking-[0.28em] uppercase -mt-3 md:-mt-4 mb-2 md:mb-3 transition-all duration-[1400ms] ease-out ${showContent ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+            className={`w-auto whitespace-nowrap text-center text-white/90 text-[9px] md:text-sm tracking-[0.24em] md:tracking-[0.28em] uppercase -mt-2 md:-mt-4 mb-2 md:mb-3 transition-all duration-[1400ms] ease-out ${showContent ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
             style={{ transitionDelay: showContent ? "120ms" : "0ms" }}
           >
             Reinvented Gifting Culture
           </div>
 
-          <div className="flex flex-col gap-3 justify-center pt-1 md:pt-2">
+          <div className="flex flex-col gap-2 md:gap-3 justify-center pt-2 md:pt-2">
             <a
               href="/withdraw"
-              className={`bg-white text-[#6b9cff] font-medium px-7 py-3 rounded-full hover:scale-[1.02] transition-all duration-700 ease-out ${showContent ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
+              className={`bg-white text-[#6b9cff] font-medium px-6 md:px-7 py-2.5 md:py-3 rounded-full hover:scale-[1.02] transition-all duration-700 ease-out ${showContent ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
               style={{ transitionDelay: showContent ? "150ms" : "0ms" }}
             >
               How To Withdraw Funds
@@ -79,27 +79,27 @@ export default function Home() {
             <div className="relative">
               <button
                 onClick={() => setShowMenu(!showMenu)}
-                className={`bg-white/20 backdrop-blur text-white px-7 py-3 rounded-full hover:bg-white/30 transition-all duration-700 ease-out w-full ${showContent ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
+                className={`bg-white/20 backdrop-blur text-white px-6 md:px-7 py-2.5 md:py-3 rounded-full hover:bg-white/30 transition-all duration-700 ease-out w-full ${showContent ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
                 style={{ transitionDelay: showContent ? "220ms" : "0ms" }}
               >
                 Policies & Support
               </button>
 
               {showMenu && (
-                <div className="mt-2 flex flex-col gap-2">
-                  <a href="/refund-policy" className="text-white/80 text-sm hover:text-white transition-colors">
+                <div className="mt-2 flex flex-col gap-1.5 md:gap-2">
+                  <a href="/refund-policy" className="text-white/80 text-xs md:text-sm hover:text-white transition-colors">
                     Refund Policy
                   </a>
-                  <a href="/terms" className="text-white/80 text-sm hover:text-white transition-colors">
+                  <a href="/terms" className="text-white/80 text-xs md:text-sm hover:text-white transition-colors">
                     Terms of Service
                   </a>
-                  <a href="/privacy" className="text-white/80 text-sm hover:text-white transition-colors">
+                  <a href="/privacy" className="text-white/80 text-xs md:text-sm hover:text-white transition-colors">
                     Privacy Policy
                   </a>
-                  <a href="/faq" className="text-white/80 text-sm hover:text-white transition-colors">
+                  <a href="/faq" className="text-white/80 text-xs md:text-sm hover:text-white transition-colors">
                     FAQ
                   </a>
-                  <a href="/contact" className="text-white/80 text-sm hover:text-white transition-colors">
+                  <a href="/contact" className="text-white/80 text-xs md:text-sm hover:text-white transition-colors">
                     Contact
                   </a>
                 </div>
@@ -108,7 +108,7 @@ export default function Home() {
           </div>
 
           <p
-            className={`max-w-[280px] md:max-w-sm text-center text-white/65 text-xs md:text-sm leading-6 pt-6 md:pt-8 transition-all duration-[1200ms] ease-out ${showContent ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+            className={`max-w-[270px] md:max-w-sm text-center text-white/65 text-[11px] md:text-sm leading-5 md:leading-6 pt-4 md:pt-8 transition-all duration-[1200ms] ease-out ${showContent ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
             style={{ transitionDelay: showContent ? "560ms" : "0ms" }}
           >
             A social gifting app where friends come together to contribute toward wishes that actually matter.
@@ -116,15 +116,15 @@ export default function Home() {
 
         </div>
 
-        <div className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 flex flex-col items-center">
+        <div className="absolute bottom-4 md:bottom-8 left-1/2 z-10 -translate-x-1/2 flex flex-col items-center">
           <div
-            className={`text-xs md:text-sm text-white/85 whitespace-nowrap transition-all duration-700 ease-out ${showContent ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+            className={`text-[10px] md:text-sm text-white/85 whitespace-nowrap transition-all duration-700 ease-out ${showContent ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
             style={{ transitionDelay: showContent ? "650ms" : "0ms" }}
           >
             Payments powered by Stripe • Secure • Private
           </div>
 
-          <div className={`text-xs text-white/60 pt-3 transition-all duration-700 ease-out ${showContent ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`} style={{ transitionDelay: showContent ? "750ms" : "0ms" }}>
+          <div className={`text-[10px] md:text-xs text-white/60 pt-1.5 md:pt-3 transition-all duration-700 ease-out ${showContent ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`} style={{ transitionDelay: showContent ? "750ms" : "0ms" }}>
             © 2026 Wishe. All rights reserved.
           </div>
         </div>
