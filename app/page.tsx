@@ -23,7 +23,7 @@ export default function Home() {
       </nav>
 
       {/* HERO */}
-      <section className="relative min-h-screen w-full flex items-center justify-center text-center overflow-hidden py-8 md:h-screen md:py-0">
+      <section className="relative h-[100svh] md:h-screen w-full flex items-center justify-center text-center overflow-hidden">
 
         {/* Background Video */}
         <video
@@ -49,7 +49,7 @@ export default function Home() {
         <div className={`absolute inset-0 bg-[#6b9cff] transition-opacity duration-[1600ms] ease-out ${showContent ? "opacity-100" : "opacity-0"}`} />
 
         {/* Content */}
-        <div className={`relative z-10 flex flex-col items-center space-y-0 px-6 pb-20 md:pb-0 transition-all duration-[1200ms] ease-out ${showContent ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-8 scale-95"}`}>
+        <div className={`relative z-10 flex flex-col items-center space-y-0 px-6 mb-24 md:mb-0 transition-all duration-[1200ms] ease-out ${showContent ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-8 scale-95"}`}>
           
           {/* Logo */}
           <Image
@@ -58,7 +58,7 @@ export default function Home() {
             width={224}
             height={224}
             priority
-            className={`w-48 h-48 md:w-72 md:h-72 object-contain -mb-8 md:-mb-12 -mt-4 md:-mt-10 transition-all duration-[1400ms] ease-out ${showContent ? "opacity-100 translate-y-0 rotate-0" : "opacity-0 -translate-y-6 -rotate-3"}`}
+            className={`w-44 h-44 md:w-72 md:h-72 object-contain -mb-7 md:-mb-12 -mt-2 md:-mt-10 transition-all duration-[1400ms] ease-out ${showContent ? "opacity-100 translate-y-0 rotate-0" : "opacity-0 -translate-y-6 -rotate-3"}`}
           />
           <div
             className={`w-auto whitespace-nowrap text-center text-white/90 text-[9px] md:text-sm tracking-[0.24em] md:tracking-[0.28em] uppercase -mt-2 md:-mt-4 mb-2 md:mb-3 transition-all duration-[1400ms] ease-out ${showContent ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
@@ -116,7 +116,7 @@ export default function Home() {
 
         </div>
 
-        <div className="absolute bottom-4 md:bottom-8 left-1/2 z-10 -translate-x-1/2 flex flex-col items-center">
+        <div className="absolute bottom-3 md:bottom-8 left-1/2 z-10 -translate-x-1/2 flex flex-col items-center">
           <div
             className={`text-[10px] md:text-sm text-white/85 whitespace-nowrap transition-all duration-700 ease-out ${showContent ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
             style={{ transitionDelay: showContent ? "650ms" : "0ms" }}
