@@ -37,7 +37,7 @@ export default function Home() {
         <div
           className={`absolute top-[72%] md:top-[72%] left-1/2 z-10 -translate-x-1/2 text-[#ffb25c] text-base md:text-lg font-normal tracking-[0.16em] uppercase drop-shadow-[0_4px_18px_rgba(0,0,0,0.65)] transition-all duration-700 ease-out ${showContent ? "opacity-0 -translate-y-3" : "opacity-100 translate-y-0"}`}
         >
-          Reinvented Gifting
+          Reinvented Gifting Culture
         </div>
 
         {/* Dark Overlay */}
@@ -59,7 +59,7 @@ export default function Home() {
             className={`text-white/90 text-[11px] md:text-sm tracking-[0.38em] uppercase -mt-3 md:-mt-4 mb-2 md:mb-3 transition-all duration-[1400ms] ease-out ${showContent ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
             style={{ transitionDelay: showContent ? "120ms" : "0ms" }}
           >
-            Reinvented Gifting
+            Reinvented Gifting Culture
           </div>
           <p
             className={`max-w-xs md:max-w-sm text-center text-white/75 text-sm md:text-base leading-6 mb-4 transition-all duration-[1200ms] ease-out ${showContent ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
