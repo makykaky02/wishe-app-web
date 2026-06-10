@@ -17,7 +17,7 @@ export default function TermsOfServicePage() {
         </h1>
 
         <p className="text-lg text-gray-600 leading-8 mb-10 rounded-3xl border border-[#dbe6ff] bg-[#f5f7ff] p-6">
-          These terms describe how Wishe operates. By using the platform, you agree to these terms and understand how the platform handles gifting, contributions, payouts, and account usage.
+          These terms describe how Wishe operates. By using the platform, you agree to these terms and understand how the platform handles gifting, contributions, payouts, and account usage. Wishe is operated by Umor LLC, a Florida limited liability company.
         </p>
 
         <h2 className="text-2xl font-medium tracking-tight text-[#6b9cff] mt-12 mb-4">
@@ -109,7 +109,7 @@ export default function TermsOfServicePage() {
           Contact
         </h2>
         <p className="text-gray-600 leading-8 rounded-3xl border border-[#dbe6ff] bg-[#fbfcff] p-6 mb-12">
-          If you have questions about these terms, you can contact support through the Wishe website.
+          Wishe is operated by Umor LLC. If you have questions about these terms, you can contact support through the Wishe website or at support@wishe.app.
         </p>
 
         <div className="flex w-full max-w-sm flex-col gap-4 pb-6">

@@ -124,8 +124,12 @@ export default function Home() {
             Payments powered by Stripe • Secure • Private
           </div>
 
-          <div className={`text-[10px] md:text-xs text-white/60 pt-1.5 md:pt-3 transition-all duration-700 ease-out ${showContent ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`} style={{ transitionDelay: showContent ? "750ms" : "0ms" }}>
+          <div className={`text-[10px] md:text-xs text-white/60 pt-1.5 md:pt-2 transition-all duration-700 ease-out ${showContent ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`} style={{ transitionDelay: showContent ? "750ms" : "0ms" }}>
             © 2026 Wishe. All rights reserved.
+          </div>
+
+          <div className={`text-[10px] md:text-xs text-white/50 pt-1 transition-all duration-700 ease-out ${showContent ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`} style={{ transitionDelay: showContent ? "800ms" : "0ms" }}>
+            Operated by Umor LLC
           </div>
         </div>
 
