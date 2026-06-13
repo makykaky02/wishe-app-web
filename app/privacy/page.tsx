@@ -37,6 +37,13 @@ export default function PrivacyPolicyPage() {
         </p>
 
         <h2 className="text-2xl font-medium tracking-tight text-[#6b9cff] mt-12 mb-4">
+          Analytics and service improvement
+        </h2>
+        <p className="text-gray-600 leading-8 mb-8 rounded-3xl border border-[#dbe6ff] bg-[#fbfcff] p-6">
+          Wishe may collect aggregated and anonymized information about how users interact with the platform, including wishlist activity, gifting activity, feature usage, and general platform trends. This information is used to improve the service, develop new features, understand user behavior, and enhance the overall user experience. Where reasonably possible, analytics information is processed in a manner that does not directly identify individual users.
+        </p>
+
+        <h2 className="text-2xl font-medium tracking-tight text-[#6b9cff] mt-12 mb-4">
           Payments
         </h2>
         <p className="text-gray-600 leading-8 mb-8 rounded-3xl border border-[#ffe0b8] bg-[#fff8ef] p-6">
@@ -47,7 +54,7 @@ export default function PrivacyPolicyPage() {
           Data sharing
         </h2>
         <p className="text-gray-600 leading-8 mb-8 rounded-3xl border border-[#dbe6ff] bg-[#fbfcff] p-6">
-          We do not sell personal data. We may share limited information with service providers strictly for operating the platform (such as payment processors).
+          We do not sell personal data. We do not use personal information for cross app tracking, targeted advertising, or sharing with data brokers. We may share limited information with service providers strictly for operating the platform (such as payment processors, cloud infrastructure providers, and authentication services).
         </p>
 
         <h2 className="text-2xl font-medium tracking-tight text-[#6b9cff] mt-12 mb-4">
