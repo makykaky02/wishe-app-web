@@ -1,5 +1,3 @@
-
-
 import Link from "next/link";
 import { Inter } from "next/font/google";
 
@@ -40,7 +38,7 @@ export default function PrivacyPolicyPage() {
           Analytics and service improvement
         </h2>
         <p className="text-gray-600 leading-8 mb-8 rounded-3xl border border-[#dbe6ff] bg-[#fbfcff] p-6">
-          Wishe may collect aggregated and anonymized information about how users interact with the platform, including wishlist activity, gifting activity, feature usage, and general platform trends. This information is used to improve the service, develop new features, understand user behavior, and enhance the overall user experience. Where reasonably possible, analytics information is processed in a manner that does not directly identify individual users.
+          Wishe may collect analytics information about how users interact with the platform, including wishlist activity, gifting activity, feature usage, wish creation dates, fulfillment activity, age group trends, wish categories, and general platform trends. Where reasonably possible, analytics information is stored separately from user profile information and does not include directly identifying details such as a user's name, email address, phone number, or payment card details. Analytics information is used to understand broader platform trends, improve the service, develop new features, and enhance the overall user experience. Wishe uses analytics for aggregate reporting and service improvement rather than to identify or profile individual users.
         </p>
 
         <h2 className="text-2xl font-medium tracking-tight text-[#6b9cff] mt-12 mb-4">
