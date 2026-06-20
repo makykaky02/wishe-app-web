@@ -15,7 +15,7 @@ export default function WithdrawFundsPage() {
         </Link>
 
         <div className="mb-8 inline-flex rounded-full bg-[#f5f7ff] px-4 py-2 text-sm font-medium text-[#6b9cff]">
-          Wishe Withdrawals
+          wishe Withdrawals
         </div>
 
         <h1 className="mb-5 text-4xl font-medium tracking-tight text-[#6b9cff] md:text-5xl">
@@ -23,7 +23,7 @@ export default function WithdrawFundsPage() {
         </h1>
 
         <p className="mb-10 max-w-2xl text-lg leading-8 text-gray-600">
-          When someone contributes to one of your wishes, those funds become available for withdrawal once the gift is eligible to be paid out. You can choose between a faster instant withdrawal or a standard withdrawal to your bank account.
+          When someone contributes to one of your wishes, those funds become available for withdrawal once the gift is eligible to be paid out. Before withdrawing, you may need to complete Stripe onboarding so payouts can be sent securely to your bank account.
         </p>
 
         <section className="mb-10 grid w-full gap-5 md:grid-cols-2">
@@ -94,15 +94,91 @@ export default function WithdrawFundsPage() {
 
         <section className="mb-10 w-full rounded-3xl border border-[#dbe6ff] bg-[#fbfcff] p-6 text-left">
           <h2 className="mb-4 text-2xl font-medium text-[#6b9cff]">
-            Withdrawal Steps
+            Stripe Setup Steps
+          </h2>
+
+          <p className="mb-6 leading-7 text-gray-600">
+            We are actively working with Stripe to make this setup process simpler. Because wishe uses a newer gifting and payout model, some onboarding steps may currently be more detailed than we would like. Thank you for your patience while we continue improving the experience.
+          </p>
+
+          <p className="mb-6 leading-7 text-gray-600">
+            Stripe may ask for basic details so your identity can be verified and payouts can be sent safely. Some fields may already be prefilled by wishe.
+          </p>
+
+          <div className="space-y-8 text-gray-600">
+            <div>
+              <p className="mb-3">
+                <span className="font-medium text-[#6b9cff]">1.</span> Put in your email and phone number if they are not already prefilled.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-[#dbe6ff] bg-white p-4 text-sm leading-6 text-gray-600">
+              <strong className="text-[#6b9cff]">About the &quot;Business Type&quot; question:</strong> Stripe uses financial industry terminology that can be confusing. Choosing <strong>Individual</strong> does not mean you are operating a business. For wishe users, this simply tells Stripe that you are an individual receiving funds and payouts rather than a company or organization.
+            </div>
+
+            <div className="grid grid-cols-3 gap-3 md:gap-5">
+              <a
+                href="/2ndpage.jpg"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <p className="mb-3 text-sm leading-5 md:text-base md:leading-6">
+                  <span className="font-medium text-[#6b9cff]">2.</span> Confirm that your business type is set to Individual. This is the correct option for most wishe users.
+                </p>
+                <img
+                  src="/2ndpage.jpg"
+                  alt="Stripe business type screen showing Individual selected"
+                  className="w-full rounded-xl border border-[#dbe6ff] shadow-sm transition-all duration-300 hover:scale-[1.02] md:rounded-2xl"
+                />
+              </a>
+
+              <a
+                href="/3rdpage.jpg"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <p className="mb-3 text-sm leading-5 md:text-base md:leading-6">
+                  <span className="font-medium text-[#6b9cff]">3.</span> Add your legal name. wishe may prefill the website as wishe.app.
+                </p>
+                <img
+                  src="/3rdpage.jpg"
+                  alt="Stripe personal details screen showing legal name and website fields"
+                  className="w-full rounded-xl border border-[#dbe6ff] shadow-sm transition-all duration-300 hover:scale-[1.02] md:rounded-2xl"
+                />
+              </a>
+
+              <a
+                href="/4thpage.jpg"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <p className="mb-3 text-sm leading-5 md:text-base md:leading-6">
+                  <span className="font-medium text-[#6b9cff]">4.</span> Select your bank or enter your bank details manually so Stripe can send payouts to your account.
+                </p>
+                <img
+                  src="/4thpage.jpg"
+                  alt="Stripe bank details screen showing bank selection options"
+                  className="w-full rounded-xl border border-[#dbe6ff] shadow-sm transition-all duration-300 hover:scale-[1.02] md:rounded-2xl"
+                />
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section className="mb-10 w-full rounded-3xl border border-[#dbe6ff] bg-white p-6 text-left">
+          <h2 className="mb-4 text-2xl font-medium text-[#6b9cff]">
+            Withdrawal Steps After Setup
           </h2>
 
           <div className="space-y-4 text-gray-600">
             <p>
-              <span className="font-medium text-[#6b9cff]">1.</span> From the Wishe home screen, press on your profile photo and open your settings.
+              <span className="font-medium text-[#6b9cff]">1.</span> From the wishe home screen, press on your profile photo and open your settings.
             </p>
             <p>
-              <span className="font-medium text-[#6b9cff]">2.</span> Connect your Stripe payout account if you have not already done so.
+              <span className="font-medium text-[#6b9cff]">2.</span> Make sure your Stripe payout account is connected.
             </p>
             <p>
               <span className="font-medium text-[#6b9cff]">3.</span> Choose the fulfilled wish or available balance you want to withdraw from.
@@ -121,7 +197,7 @@ export default function WithdrawFundsPage() {
             Important Note
           </h2>
           <p className="leading-7 text-white/90">
-            Wishe uses Stripe to process payouts securely. Exact payout timing and instant payout fees may depend on Stripe, your connected bank, your account status, and your location. Before confirming, the app should show which withdrawal option you selected.
+            wishe uses Stripe to process payouts securely. Exact payout timing and instant payout fees may depend on Stripe, your connected bank, your account status, and your location. Before confirming, the app should show which withdrawal option you selected.
           </p>
         </section>
 
