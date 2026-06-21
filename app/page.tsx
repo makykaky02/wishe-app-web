@@ -102,6 +102,9 @@ export default function Home() {
                   <a href="/contact" className="text-white/80 text-xs md:text-sm hover:text-white transition-colors">
                     Contact
                   </a>
+                  <a href="/deletion" className="text-white/80 text-xs md:text-sm hover:text-white transition-colors">
+                    Delete Account
+                  </a>
                 </div>
               )}
             </div>
