@@ -35,10 +35,14 @@ export default function Home() {
     };
 
     window.addEventListener("pageshow", playIntro);
+    window.addEventListener("pointerdown", playIntro, { once: true });
+    window.addEventListener("touchstart", playIntro, { once: true });
     document.addEventListener("visibilitychange", resumeIntro);
 
     return () => {
       window.removeEventListener("pageshow", playIntro);
+      window.removeEventListener("pointerdown", playIntro);
+      window.removeEventListener("touchstart", playIntro);
       document.removeEventListener("visibilitychange", resumeIntro);
       clearTimeout(revealTimer);
     };
@@ -58,6 +62,8 @@ export default function Home() {
         <video
           ref={videoRef}
           autoPlay
+          controls={false}
+          disablePictureInPicture
           loop
           muted
           playsInline
@@ -65,16 +71,10 @@ export default function Home() {
           onCanPlay={prepareIntro}
           onLoadedData={prepareIntro}
           onPlaying={() => setVideoReady(true)}
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${videoReady ? "opacity-100" : "opacity-0"}`}
+          className={`intro-video pointer-events-none absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${videoReady ? "opacity-100" : "opacity-0"}`}
         >
           <source src="/goldfish.mp4" type="video/mp4" />
         </video>
-
-        <div
-          className={`absolute top-[72%] md:top-[72%] left-1/2 z-10 -translate-x-1/2 whitespace-nowrap text-white text-base md:text-lg font-medium tracking-[0.16em] uppercase [text-shadow:0_2px_5px_rgba(0,0,0,0.9),0_8px_24px_rgba(0,0,0,0.72)] transition-all duration-700 ease-out ${videoReady && !showContent ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-3"}`}
-        >
-          Reinventing Gifting Culture.
-        </div>
 
         {/* Dark Overlay */}
         <div className={`absolute inset-0 bg-[#6b9cff] transition-opacity duration-[1600ms] ease-out ${showContent ? "opacity-100" : "opacity-0"}`} />
