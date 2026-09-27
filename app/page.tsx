@@ -1,19 +1,53 @@
 "use client";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import Link from "next/link";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 export default function Home() {
   const [showContent, setShowContent] = useState(false);
   const [videoReady, setVideoReady] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const revealTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
+  const startIntro = useCallback(() => {
+    setVideoReady(true);
+
+    if (revealTimerRef.current) return;
+
+    revealTimerRef.current = setTimeout(() => {
       setShowContent(true);
     }, 4000);
-
-    return () => clearTimeout(timer);
   }, []);
+
+  const playIntro = useCallback(() => {
+    const video = videoRef.current;
+    if (!video || showContent) return;
+
+    video.muted = true;
+    video.defaultMuted = true;
+    void video.play().catch(() => {
+      // Mobile browsers can defer autoplay until the media is ready. The
+      // canPlay and visibility handlers below retry without showing controls.
+    });
+  }, [showContent]);
+
+  useEffect(() => {
+    playIntro();
+
+    const resumeIntro = () => {
+      if (document.visibilityState === "visible") playIntro();
+    };
+
+    window.addEventListener("pageshow", playIntro);
+    document.addEventListener("visibilitychange", resumeIntro);
+
+    return () => {
+      window.removeEventListener("pageshow", playIntro);
+      document.removeEventListener("visibilitychange", resumeIntro);
+      if (revealTimerRef.current) clearTimeout(revealTimerRef.current);
+    };
+  }, [playIntro]);
 
   return (
     <main className="min-h-screen bg-white text-black overflow-x-hidden">
@@ -27,22 +61,24 @@ export default function Home() {
 
         {/* Background Video */}
         <video
+          ref={videoRef}
           autoPlay
           loop
           muted
           playsInline
           preload="auto"
-          onCanPlay={() => setVideoReady(true)}
-          onLoadedData={() => setVideoReady(true)}
+          onCanPlay={playIntro}
+          onLoadedData={playIntro}
+          onPlaying={startIntro}
           className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${videoReady ? "opacity-100" : "opacity-0"}`}
         >
           <source src="/goldfish.mp4" type="video/mp4" />
         </video>
 
         <div
-          className={`absolute top-[72%] md:top-[72%] left-1/2 z-10 -translate-x-1/2 text-[#ffb25c] text-base md:text-lg font-normal tracking-[0.16em] uppercase drop-shadow-[0_4px_18px_rgba(0,0,0,0.65)] transition-all duration-700 ease-out ${videoReady && !showContent ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-3"}`}
+          className={`absolute top-[72%] md:top-[72%] left-1/2 z-10 -translate-x-1/2 whitespace-nowrap text-white text-base md:text-lg font-medium tracking-[0.16em] uppercase [text-shadow:0_2px_5px_rgba(0,0,0,0.9),0_8px_24px_rgba(0,0,0,0.72)] transition-all duration-700 ease-out ${videoReady && !showContent ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-3"}`}
         >
-          Reinvented Gifting Culture
+          Reinventing Gifting Culture.
         </div>
 
         {/* Dark Overlay */}
@@ -64,17 +100,17 @@ export default function Home() {
             className={`w-auto whitespace-nowrap text-center text-white/90 text-[9px] md:text-sm tracking-[0.24em] md:tracking-[0.28em] uppercase -mt-2 md:-mt-4 mb-2 md:mb-3 transition-all duration-[1400ms] ease-out ${showContent ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
             style={{ transitionDelay: showContent ? "120ms" : "0ms" }}
           >
-            Reinvented Gifting Culture
+            Reinventing Gifting Culture.
           </div>
 
           <div className="flex flex-col gap-2 md:gap-3 justify-center pt-2 md:pt-2">
-            <a
+            <Link
               href="/withdraw"
               className={`bg-white text-[#6b9cff] font-medium px-6 md:px-7 py-2.5 md:py-3 rounded-full hover:scale-[1.02] transition-all duration-700 ease-out ${showContent ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
               style={{ transitionDelay: showContent ? "150ms" : "0ms" }}
             >
               How To Withdraw Funds
-            </a>
+            </Link>
 
             <div className="relative">
               <button
@@ -87,24 +123,24 @@ export default function Home() {
 
               {showMenu && (
                 <div className="mt-2 flex flex-col gap-1.5 md:gap-2">
-                  <a href="/refund-policy" className="text-white/80 text-xs md:text-sm hover:text-white transition-colors">
+                  <Link href="/refund-policy" className="text-white/80 text-xs md:text-sm hover:text-white transition-colors">
                     Refund Policy
-                  </a>
-                  <a href="/terms" className="text-white/80 text-xs md:text-sm hover:text-white transition-colors">
+                  </Link>
+                  <Link href="/terms" className="text-white/80 text-xs md:text-sm hover:text-white transition-colors">
                     Terms of Service
-                  </a>
-                  <a href="/privacy" className="text-white/80 text-xs md:text-sm hover:text-white transition-colors">
+                  </Link>
+                  <Link href="/privacy" className="text-white/80 text-xs md:text-sm hover:text-white transition-colors">
                     Privacy Policy
-                  </a>
-                  <a href="/faq" className="text-white/80 text-xs md:text-sm hover:text-white transition-colors">
+                  </Link>
+                  <Link href="/faq" className="text-white/80 text-xs md:text-sm hover:text-white transition-colors">
                     FAQ
-                  </a>
-                  <a href="/contact" className="text-white/80 text-xs md:text-sm hover:text-white transition-colors">
+                  </Link>
+                  <Link href="/contact" className="text-white/80 text-xs md:text-sm hover:text-white transition-colors">
                     Contact
-                  </a>
-                  <a href="/deletion" className="text-white/80 text-xs md:text-sm hover:text-white transition-colors">
+                  </Link>
+                  <Link href="/deletion" className="text-white/80 text-xs md:text-sm hover:text-white transition-colors">
                     Delete Account
-                  </a>
+                  </Link>
                 </div>
               )}
             </div>

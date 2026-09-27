@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Wishe | Reinvented Gifting",
+  title: "wishe | Reinventing Gifting Culture",
   description:
     "Wishe is a social gifting app where friends can contribute toward wishes, birthdays, experiences, and meaningful gifts together.",
   keywords: [
@@ -29,16 +29,16 @@ export const metadata: Metadata = {
     "wishlists",
   ],
   openGraph: {
-    title: "Wishe | Reinvented Gifting",
+    title: "wishe | Reinventing Gifting Culture",
     description:
       "A social gifting app where friends come together to contribute toward wishes that actually matter.",
     url: "https://wishe.app",
-    siteName: "Wishe",
+    siteName: "wishe",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Wishe | Reinvented Gifting",
+    title: "wishe | Reinventing Gifting Culture",
     description:
       "A social gifting app where friends come together to contribute toward wishes that actually matter.",
   },
