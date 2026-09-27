@@ -8,21 +8,10 @@ export default function Home() {
   const [videoReady, setVideoReady] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const revealTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  const startIntro = useCallback(() => {
-    setVideoReady(true);
-
-    if (revealTimerRef.current) return;
-
-    revealTimerRef.current = setTimeout(() => {
-      setShowContent(true);
-    }, 4000);
-  }, []);
 
   const playIntro = useCallback(() => {
     const video = videoRef.current;
-    if (!video || showContent) return;
+    if (!video) return;
 
     video.muted = true;
     video.defaultMuted = true;
@@ -30,10 +19,16 @@ export default function Home() {
       // Mobile browsers can defer autoplay until the media is ready. The
       // canPlay and visibility handlers below retry without showing controls.
     });
-  }, [showContent]);
+  }, []);
+
+  const prepareIntro = useCallback(() => {
+    setVideoReady(true);
+    playIntro();
+  }, [playIntro]);
 
   useEffect(() => {
     playIntro();
+    const revealTimer = setTimeout(() => setShowContent(true), 4000);
 
     const resumeIntro = () => {
       if (document.visibilityState === "visible") playIntro();
@@ -45,7 +40,7 @@ export default function Home() {
     return () => {
       window.removeEventListener("pageshow", playIntro);
       document.removeEventListener("visibilitychange", resumeIntro);
-      if (revealTimerRef.current) clearTimeout(revealTimerRef.current);
+      clearTimeout(revealTimer);
     };
   }, [playIntro]);
 
@@ -57,7 +52,7 @@ export default function Home() {
       </nav>
 
       {/* HERO */}
-      <section className="relative h-[100svh] md:h-screen w-full flex items-center justify-center text-center overflow-hidden">
+      <section className="relative h-[100svh] md:h-screen w-full flex items-center justify-center text-center overflow-hidden bg-[#6b9cff]">
 
         {/* Background Video */}
         <video
@@ -67,9 +62,9 @@ export default function Home() {
           muted
           playsInline
           preload="auto"
-          onCanPlay={playIntro}
-          onLoadedData={playIntro}
-          onPlaying={startIntro}
+          onCanPlay={prepareIntro}
+          onLoadedData={prepareIntro}
+          onPlaying={() => setVideoReady(true)}
           className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${videoReady ? "opacity-100" : "opacity-0"}`}
         >
           <source src="/goldfish.mp4" type="video/mp4" />
