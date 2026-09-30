@@ -127,6 +127,9 @@ export default function Home() {
                   <Link href="/privacy" className="text-white/80 text-xs md:text-sm hover:text-white transition-colors">
                     Privacy Policy
                   </Link>
+                  <Link href="/stripe-terms-update" className="text-white/80 text-xs md:text-sm hover:text-white transition-colors">
+                    Stripe Terms Update
+                  </Link>
                   <Link href="/faq" className="text-white/80 text-xs md:text-sm hover:text-white transition-colors">
                     FAQ
                   </Link>
