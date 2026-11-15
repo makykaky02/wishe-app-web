@@ -43,10 +43,10 @@ export default function DownloadPage() {
 
           <div className="relative mx-auto flex max-w-xl flex-col items-center">
             <Image
-              src="/logofullwhite.png"
+              src="/wln.png"
               alt="wishe"
-              width={1094}
-              height={309}
+              width={1185}
+              height={527}
               priority
               className="h-auto w-56 object-contain md:w-72"
             />
