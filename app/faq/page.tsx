@@ -8,14 +8,14 @@ const inter = Inter({ subsets: ["latin"] });
 
 const faqs = [
   {
-    title: "About Wishe",
+    title: "About wishe",
     content:
-      "Wishe is a gifting platform designed to make gifting more personal, flexible, and meaningful. Instead of guessing what someone wants, friends can come together and contribute toward a single wish that a person actually chose. The experience is designed to feel like real gifting rather than simply sending money, because the focus stays on the wish itself instead of the price tag behind it. The goal is to make gifting feel easier, more intentional, and less wasteful.",
+      "wishe is reinventing gifting culture by bringing friends together to contribute toward meaningful wishes while keeping each person’s exact contribution amount private. Instead of guessing what someone wants, friends can contribute toward a wish that person actually chose. The focus stays on the wish and the gesture behind it, making gifting more personal, intentional, and meaningful.",
   },
   {
     title: "Why can’t I see how much my friends individually donated?",
     content:
-      "Wishe is designed to preserve the feeling of gifting rather than turning the experience into tracking dollar amounts between friends. When someone gives you a thoughtful mug in real life, you usually do not turn it over looking for the price tag to see exactly how much they spent. The focus stays on the gesture and the wish itself instead of comparing contribution amounts. Thankfully, this way we also avoid ending up with random mugs sitting around just because someone felt pressured to buy a physical gift.",
+      "wishe is designed to preserve the feeling of gifting rather than turning the experience into tracking dollar amounts between friends. When someone gives you a thoughtful mug in real life, you usually do not turn it over looking for the price tag to see exactly how much they spent. The focus stays on the gesture and the wish itself instead of comparing contribution amounts. Thankfully, this way we also avoid ending up with random mugs sitting around just because someone felt pressured to buy a physical gift.",
   },
   {
     title: "How do gifts work?",

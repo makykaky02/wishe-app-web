@@ -12,12 +12,44 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const canonicalDescription =
+  "wishe is reinventing gifting culture by bringing friends together to contribute toward meaningful wishes while keeping each person’s exact contribution amount private.";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://wishe.app/#organization",
+      name: "Umor LLC",
+      url: "https://umor.dev",
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://wishe.app/#app",
+      name: "wishe",
+      url: "https://wishe.app",
+      applicationCategory: "SocialNetworkingApplication",
+      operatingSystem: "iOS, Android",
+      description: canonicalDescription,
+      publisher: { "@id": "https://wishe.app/#organization" },
+      sameAs: [
+        "https://apps.apple.com/app/id6778999964",
+        "https://play.google.com/store/apps/details?id=com.umor.wishe",
+      ],
+    },
+  ],
+};
+
 export const metadata: Metadata = {
+  applicationName: "wishe",
   title: "wishe | Reinventing Gifting Culture",
-  description:
-    "Wishe is a social gifting app where friends can contribute toward wishes, birthdays, experiences, and meaningful gifts together.",
+  description: canonicalDescription,
+  category: "Social gifting platform",
+  alternates: { canonical: "https://wishe.app" },
   keywords: [
-    "Wishe",
+    "wishe",
+    "social gifting platform",
     "gifting app",
     "social gifting",
     "wishlist app",
@@ -30,8 +62,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "wishe | Reinventing Gifting Culture",
-    description:
-      "A social gifting app where friends come together to contribute toward wishes that actually matter.",
+    description: canonicalDescription,
     url: "https://wishe.app",
     siteName: "wishe",
     type: "website",
@@ -39,8 +70,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "wishe | Reinventing Gifting Culture",
-    description:
-      "A social gifting app where friends come together to contribute toward wishes that actually matter.",
+    description: canonicalDescription,
   },
   icons: {
     icon: "/favicon.ico",
@@ -59,7 +89,15 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+          }}
+        />
+        {children}
+      </body>
     </html>
   );
 }

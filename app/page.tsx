@@ -148,7 +148,7 @@ export default function Home() {
             className={`max-w-[270px] md:max-w-sm text-center text-white/65 text-[11px] md:text-sm leading-5 md:leading-6 pt-4 md:pt-8 transition-all duration-[1200ms] ease-out ${showContent ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
             style={{ transitionDelay: showContent ? "560ms" : "0ms" }}
           >
-            A social gifting app where friends come together to contribute toward wishes that actually matter.
+            wishe is reinventing gifting culture by bringing friends together to contribute toward meaningful wishes while keeping each person&apos;s exact contribution amount private.
           </p>
 
         </div>
@@ -162,7 +162,7 @@ export default function Home() {
           </div>
 
           <div className={`text-[10px] md:text-xs text-white/60 pt-1.5 md:pt-2 transition-all duration-700 ease-out ${showContent ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`} style={{ transitionDelay: showContent ? "750ms" : "0ms" }}>
-            © 2026 Wishe. All rights reserved.
+            © 2026 wishe. All rights reserved.
           </div>
 
           <div className={`text-[10px] md:text-xs text-white/50 pt-1 transition-all duration-700 ease-out ${showContent ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`} style={{ transitionDelay: showContent ? "800ms" : "0ms" }}>

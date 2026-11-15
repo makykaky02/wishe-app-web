@@ -20,6 +20,10 @@ export default function TermsOfServicePage() {
           These terms describe how Wishe operates. By using the platform, you agree to these terms and understand how the platform handles gifting, contributions, payouts, and account usage. Wishe is operated by Umor LLC, a Florida limited liability company.
         </p>
 
+        <p className="mb-10 text-sm font-medium text-gray-500">
+          Last updated: November 13, 2026
+        </p>
+
         <h2 className="text-2xl font-medium tracking-tight text-[#6b9cff] mt-12 mb-4">
           Eligibility
         </h2>
@@ -52,7 +56,7 @@ export default function TermsOfServicePage() {
           Payments, service fees, and taxes
         </h2>
         <p className="text-gray-600 leading-8 mb-8 rounded-3xl border border-[#ffe0b8] bg-[#fff8ef] p-6">
-          Payments are processed through third party providers such as Stripe. Wishe does not store card details. The platform may apply small service related fees or taxes required to operate the service and process transactions securely.
+          Payments are processed through third party providers such as Stripe. Wishe does not store card details. Wishe charges a fixed $0.10 platform fee for each contribution, in addition to the gift amount selected for the recipient. A payment processing fee may also be charged depending on the checkout flow and whether the contributor chooses to cover that cost. Baby shower guest checkout includes the applicable payment processing fee. Before payment is completed, checkout displays the gift amount, the combined Transaction fee, and the total amount that will be charged. The selected gift amount is not reduced by these fees. Applicable taxes may also be added where required by law.
         </p>
 
         <h2 className="text-2xl font-medium tracking-tight text-[#6b9cff] mt-12 mb-4">
