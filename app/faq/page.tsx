@@ -3,10 +3,13 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Inter } from "next/font/google";
+import "./faq.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
-const faqs = [
+type GuideKind = "friend" | "delete" | "reorder";
+
+const faqs: { title: string; content: string; guide?: GuideKind }[] = [
   {
     title: "About wishe",
     content:
@@ -21,6 +24,24 @@ const faqs = [
     title: "How do gifts work?",
     content:
       "A user creates wishes inside the Wishe app. Friends can view those wishes and contribute toward them. A wish can be fully funded by one person or completed through multiple contributions. Once a wish is fulfilled, the receiver can follow the available withdrawal or fulfillment process inside the app.",
+  },
+  {
+    title: "How do I add a friend?",
+    content:
+      "Open Friends, find someone by their first name, last name, or username, and open their profile. Tap the pin at the top of their profile to keep them in your friend list and follow their birthday and wishes.",
+    guide: "friend",
+  },
+  {
+    title: "How do I delete a wish?",
+    content:
+      "On your wishlist, swipe the wish to the left until the red Delete action appears, then tap Delete. Wishes with contributions or completed payment activity may have restrictions that protect gifting records.",
+    guide: "delete",
+  },
+  {
+    title: "How do I rearrange my wishes?",
+    content:
+      "Press and hold a wish, then drag it up or down to the position you want. Release it when the wishes are in your preferred order.",
+    guide: "reorder",
   },
   {
     title: "Can multiple people contribute to one wish?",
@@ -104,6 +125,16 @@ const faqs = [
   },
 ];
 
+function FaqGuide({ kind }: { kind: GuideKind }) {
+  if (kind === "friend") {
+    return <div className="faq-guide faq-guide-friend" aria-label="Animation showing the pin button used to add a friend"><div className="faq-phone"><span className="faq-avatar" /><b>@friend</b><button type="button" tabIndex={-1} aria-hidden="true">●</button><i className="faq-tap" /></div><p>Open their profile, then tap the pin.</p></div>;
+  }
+  if (kind === "delete") {
+    return <div className="faq-guide faq-guide-delete" aria-label="Animation showing a wish sliding left to reveal Delete"><div className="faq-demo-track"><span className="faq-delete-action">Delete</span><div className="faq-wish-card"><i /><span><b>Birthday wish</b><small>$45 goal</small></span></div><i className="faq-swipe-hand" /></div><p>Swipe left, then tap Delete.</p></div>;
+  }
+  return <div className="faq-guide faq-guide-reorder" aria-label="Animation showing a wish being dragged into a new position"><div className="faq-reorder-list"><div className="faq-reorder-row first"><i /><b>Weekend trip</b><span>⋮⋮</span></div><div className="faq-reorder-row second"><i /><b>New headphones</b><span>⋮⋮</span></div><i className="faq-drag-hand" /></div><p>Press, hold, and drag into place.</p></div>;
+}
+
 export default function FAQPage() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
@@ -150,7 +181,8 @@ export default function FAQPage() {
 
                 {isOpen && (
                   <div className="px-6 pb-6 text-gray-600 leading-8">
-                    {faq.content}
+                    <p>{faq.content}</p>
+                    {faq.guide && <FaqGuide kind={faq.guide} />}
                   </div>
                 )}
               </div>
